@@ -1,0 +1,87 @@
+Q:/usr/bin/python: No module named pip
+A:
+https://pip.pypa.io/en/stable/installing/
+
+pip is already installed if you're using Python 2 >=2.7.9 or Python 3 >=3.4 binaries downloaded from python.org, but you'll need to upgrade pip.
+
+1.wget https://bootstrap.pypa.io/get-pip.py
+2.sudo python get-pip.py
+
+Q:ImportError: No module named yahoo_finance
+A:
+sudo python -m pip install yahoo_finance
+
+Q:How to debug python
+python -m pdb xxx.py
+
+Q:ImportError: 'No module named bs4'
+A:
+sudo pip install BeautifulSoup4
+http://stackoverflow.com/questions/11783875/importerror-no-module-named-bs4-beautifulsoup
+
+Q:ImportError: 'No module named Stock'
+A:
+sudo pip install Stock
+Collecting psycopg2 (from Stock)
+  Downloading psycopg2-2.6.2.tar.gz (376kB)
+    100% |████████████████████████████████| 378kB 506kB/s
+    Complete output from command python setup.py egg_info:
+    running egg_info
+    creating pip-egg-info/psycopg2.egg-info
+    writing pip-egg-info/psycopg2.egg-info/PKG-INFO
+    writing top-level names to pip-egg-info/psycopg2.egg-info/top_level.txt
+    writing dependency_links to pip-egg-info/psycopg2.egg-info/dependency_links.txt
+    writing manifest file 'pip-egg-info/psycopg2.egg-info/SOURCES.txt'
+    warning: manifest_maker: standard file '-c' not found
+
+    Error: pg_config executable not found.
+
+    Please add the directory containing pg_config to the PATH
+    or specify the full executable path with the option:
+
+        python setup.py build_ext --pg-config /path/to/pg_config build ...
+
+    or with the pg_config option in 'setup.cfg'.
+
+    ----------------------------------------
+Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-build-oidT7J/psycopg2/
+
+http://stackoverflow.com/questions/11618898/pg-config-executable-not-found
+
+sudo apt-get install libpq-dev
+
+sudo pip install grs
+The directory '/home/yuan/.cache/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+The directory '/home/yuan/.cache/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+Collecting grs
+  Downloading grs-0.7.0-py2-none-any.whl (110kB)
+    100% |████████████████████████████████| 112kB 511kB/s
+Collecting ujson (from grs)
+  Downloading ujson-1.35.tar.gz (192kB)
+    100% |████████████████████████████████| 194kB 827kB/s
+Collecting urllib3 (from grs)
+  Downloading urllib3-1.19-py2.py3-none-any.whl (104kB)
+    100% |████████████████████████████████| 112kB 1.0MB/s
+Collecting python-dateutil==1.5 (from grs)
+Installing collected packages: ujson, urllib3, python-dateutil, grs
+  Running setup.py install for ujson ... error
+    Complete output from command /usr/bin/python -u -c "import setuptools, tokenize;__file__='/tmp/pip-build-REsCUW/ujson/setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" install --record /tmp/pip-xJPKUt-record/install-record.txt --single-version-externally-managed --compile:
+    running install
+    running build
+    running build_ext
+    building 'ujson' extension
+    creating build
+    creating build/temp.linux-x86_64-2.7
+    creating build/temp.linux-x86_64-2.7/python
+    creating build/temp.linux-x86_64-2.7/lib
+    x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fno-strict-aliasing -Wdate-time -D_FORTIFY_SOURCE=2 -g -fstack-protector-strong -Wformat -Werror=format-security -fPIC -I./python -I./lib -I/usr/include/python2.7 -c ./python/ujson.c -o build/temp.linux-x86_64-2.7/./python/ujson.o -D_GNU_SOURCE
+    In file included from ./python/ujson.c:39:0:
+    ./python/py_defines.h:39:20: fatal error: Python.h: No such file or directory
+    compilation terminated.
+    error: command 'x86_64-linux-gnu-gcc' failed with exit status 1
+
+    ----------------------------------------
+Command "/usr/bin/python -u -c "import setuptools, tokenize;__file__='/tmp/pip-build-REsCUW/ujson/setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" install --record /tmp/pip-xJPKUt-record/install-record.txt --single-version-externally-managed --compile" failed with error code 1 in /tmp/pip-build-REsCUW/ujson/
+
+
+sudo apt-get install python2.7-dev

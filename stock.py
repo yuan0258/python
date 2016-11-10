@@ -20,7 +20,7 @@ def getopendata(id):
     #url = 'http://www.google.com.tw'
     #response = urllib.request.urlopen(url)
     response = urllib2.urlopen(url)
-    html = response.read()args
+    html = response.read().args
     sp = BeautifulSoup(html.decode('utf8'))  #cp950
     print(sp)
 
